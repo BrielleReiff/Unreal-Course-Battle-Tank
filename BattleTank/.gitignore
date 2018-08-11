@@ -2,6 +2,18 @@
 .vs/
 *.VC.db
 
+# Qt Creator generated files
+*.pro
+*.pro.user
+.kdev4/*
+*.kdev4
+*CodeCompletionFolders.txt
+*CodeLitePreProcessor.txt
+*.pri
+*.workspace
+CMakeLists.txt
+Makefile
+
 # Compiled Object files
 *.slo
 *.lo
@@ -64,3 +76,6 @@ DerivedDataCache/*
 
 #Starter Content
 Content/StarterContent
+
+# Backup files
+*~
