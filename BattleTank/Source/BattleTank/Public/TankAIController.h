@@ -8,15 +8,16 @@
 #include "TankAIController.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
 {
 	GENERATED_BODY()
-	
+
   public:
     ATank* GetControlledTank() const;
 
     void BeginPlay() override;
+    ATank* GetPlayerTank() const;
 };
