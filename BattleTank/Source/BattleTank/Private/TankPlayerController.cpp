@@ -19,7 +19,35 @@ void ATankPlayerController::BeginPlay()
     }
 }
 
+// Called every frame
+void ATankPlayerController::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+    AimTowardsCrosshair();
+}
+
 ATank* ATankPlayerController::GetControlledTank() const
 {
     return Cast<ATank>(GetPawn());
+}
+
+void ATankPlayerController::AimTowardsCrosshair()
+{
+    if (!GetControlledTank()) { return; }
+
+    FVector HitLocation;
+    if (GetSightRayHitLocation(HitLocation))
+    {
+        // TODO: Aim tank barrel at location
+    }
+}
+
+bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) const
+{
+    // Find the crosshair position in pixel coordinates
+    int32 ViewportSizeX, ViewportSizeY;
+    GetViewportSize(ViewportSizeX, ViewportSizeY);
+    auto ScreenLocation = FVector2D(ViewportSizeX * CrosshairXLocation, ViewportSizeY * CrosshairYLocation);
+
+    return true;
 }
