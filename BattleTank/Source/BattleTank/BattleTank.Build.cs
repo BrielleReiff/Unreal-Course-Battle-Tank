@@ -6,7 +6,9 @@ public class BattleTank : ModuleRules
 {
     public BattleTank(ReadOnlyTargetRules Target) : base (Target)
 	{
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PrivatePCHHeaderFile = "BattleTank.h";
+        PublicDependencyModuleNames.AddRange(new string[] {"AIModule", "Core", "CoreUObject",
+                                                           "Engine", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
